@@ -6,7 +6,7 @@ I am thrilled to present the **finalized** documentation for the Book Store Mana
 
 Kindly ensure the creation of a ".env" file from ".env.example" and establish the connection between the **NestJS** App and the **PostgreSQL** database.
 
-Additionally, you have the option to utilize the "generate_jwt.py" file to generate JWT_SECRET, JWT_AT_KEY, and JWT_RT_KEY values for integration into your ".env" configuration file.
+Additionally, you have the option to utilize the **"generate_jwt.py"** file to generate **JWT_SECRET**, **JWT_AT_KEY**, and **JWT_RT_KEY** values for integration into your **".env"** configuration file.
 
 Your cooperation in this matter is highly appreciated.
 
