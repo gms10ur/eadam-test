@@ -18,16 +18,16 @@ Your cooperation in this matter is highly appreciated.
 
 We aim to develop a Book Store Management application. The application will consist of three roles: User, Store Manager, and Admin.
 
-### User Role:
+#### User Role:
 
 - Ability to view all bookstores.
 - Can view the books available in each store and query which books are available in which bookstores.
 
-### Store Manager Role:
+#### Store Manager Role:
 
 - Can add or remove a specific quantity of a book to/from a store (from the Book table)
 
-### Admin Role:
+#### Admin Role:
 
 - Can create a new bookstore.
 - Can add a new book.
