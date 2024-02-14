@@ -17,14 +17,14 @@ export class StoreController {
   }
 
   @Auth()
-  @Roles(Role.USER)
+  @Roles(Role.USER || Role.ADMIN)
   @Get()
   findAll() {
     return this.storeService.findAll();
   }
 
   @Auth()
-  @Roles(Role.USER)
+  @Roles(Role.USER || Role.ADMIN)
   @Get(':id')
   findOne(@Param('id') id: number) {
     return this.storeService.findOne({ id }, true);

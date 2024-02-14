@@ -7,8 +7,8 @@ import { ConfigService } from '@nestjs/config';
 @Injectable()
 export class AtGuard extends AuthGuard('jwt') {
   constructor(
-      private readonly config: ConfigService,
-      private reflector: Reflector,
+    private readonly config: ConfigService,
+    private reflector: Reflector,
   ) {
     const options = config.get('auth.options');
 
@@ -26,7 +26,7 @@ export class AtGuard extends AuthGuard('jwt') {
   }
 
   canActivate(
-      context: ExecutionContext,
+    context: ExecutionContext,
   ): boolean | Promise<boolean> | Observable<boolean> {
     const isPublic = this.reflector.getAllAndOverride('isPublic', [
       context.getHandler(),

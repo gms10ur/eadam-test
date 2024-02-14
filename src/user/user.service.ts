@@ -23,7 +23,7 @@ export class UserService {
   ) {}
 
   async create(createUserInput: CreateUserInputDto) {
-    const { firstName, lastName, email, password } = createUserInput;
+    const { firstName, lastName, email, password, role } = createUserInput;
 
     const emailExists = await this.usersRepository.findOneBy({ email });
 
@@ -33,13 +33,14 @@ export class UserService {
       );
     }
 
-    const hashedPassword = await argon2.hash(createUserInput.password);
+    const hashedPassword = await argon2.hash(password);
 
     const user = new User();
     user.firstName = firstName;
     user.lastName = lastName;
     user.email = email;
     user.password = hashedPassword;
+    user.role = role;
 
     await this.usersRepository.save(user);
 

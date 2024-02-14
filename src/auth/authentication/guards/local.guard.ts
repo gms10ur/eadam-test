@@ -7,15 +7,15 @@ import { ConfigService } from '@nestjs/config';
 @Injectable()
 export class LocalGuard extends AuthGuard('local') {
   constructor(
-      private readonly config: ConfigService,
-      private reflector: Reflector,
+    private readonly config: ConfigService,
+    private reflector: Reflector,
   ) {
     const options = config.get('auth.options');
     super(options);
   }
 
   canActivate(
-      context: ExecutionContext,
+    context: ExecutionContext,
   ): boolean | Promise<boolean> | Observable<boolean> {
     const isPublic = this.reflector.getAllAndOverride('isPublic', [
       context.getHandler(),

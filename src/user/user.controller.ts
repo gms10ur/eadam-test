@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Patch } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserInputDto, UpdateUserInputDto } from './dto';
 import { Auth } from '../auth/decorators';
@@ -11,8 +11,8 @@ export class UserController {
 
   @Auth()
   @Roles(Role.ADMIN)
-  @Get()
-  async create(createUserInput: CreateUserInputDto) {
+  @Post()
+  async create(@Body() createUserInput: CreateUserInputDto) {
     return this.userService.create(createUserInput);
   }
 
